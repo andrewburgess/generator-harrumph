@@ -1,0 +1,20 @@
+long-shadow-box(color, size, x = 1, y = 1)
+  if (size > 0)
+    buffer = ''
+
+    for i in (1..size)
+      buffer += '%spx %spx 0 %s' % ((i * x) (i * y) color)
+      if (i < size)
+        buffer += ','
+      buffer += ' '
+
+    box-shadow unquote(buffer)
+
+fa(icon)
+    display inline-block
+    font-family FontAwesome
+    font-style normal
+    font-weight normal
+
+    &:before
+        content icon

@@ -1,0 +1,11 @@
+node_modules
+dist
+*.sublime-workspace
+app/bower_components
+.tmp
+app/css/
+test/client/results/
+test/reports/*.xml
+test/reports/client/*.xml
+test/reports/server/*.xml
+test/reports/client/coverage/
