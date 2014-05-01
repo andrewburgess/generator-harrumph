@@ -63,6 +63,7 @@
     "supertest": "~0.8.2",
     "time-grunt": "~0.2.1",
     "usemin-patterns": "^0.1.4",
-    "karma-coverage": "^0.2.1"
+    "karma-coverage": "^0.2.1",
+    "grunt-file-blocks": "^0.3.0"
   }
 }

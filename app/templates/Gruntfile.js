@@ -98,6 +98,20 @@ module.exports = function (grunt) {
           livereload: true,
           nospawn: true //Without this option specified express won't be reloaded
         }
+      },
+      bower: {
+        files: ['bower.json', '<%= yeoman.app %>/bower_components/**/*.*'],
+        tasks: ['bowerInstall'],
+        options: {
+          event: ['added', 'deleted'],
+        }
+      },
+      fileblocks: {
+        files: [ '<%= yeoman.app %>/js/**/*.js' ],
+        tasks: [ 'fileblocks' ],
+        options: {
+          event: ['added', 'deleted']
+        }
       }
     },
 
@@ -211,6 +225,25 @@ module.exports = function (grunt) {
         exclude: [
           'json3', 'es5-shim'
         ]
+      }
+    },
+
+    fileblocks: {
+      scripts: {
+        src: '<%= yeoman.app %>/views/index.html',
+        blocks: {
+         'app': {
+            src: [ 'js/**/*.js', '!js/vendor/**/*.js' ],
+            cwd: 'app'
+          },
+          'vendor': {
+            src: [ 'js/vendor/**/*.js' ],
+            cwd: 'app'
+          }
+        },
+        options: {
+          removeFiles: true
+        }
       }
     },
 
@@ -415,7 +448,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['newer:jshint', 'build', 'express:prod', 'open', 'express-keepalive']);
+      return grunt.task.run(['newer:jshint', 'updateBlocks', 'build', 'express:prod', 'open', 'express-keepalive']);
     }
 
     grunt.task.run([
@@ -485,6 +518,11 @@ module.exports = function (grunt) {
     'usemin'
   ]);
 
+  grunt.registerTask('updateBlocks', [
+    'bowerInstall',
+    'fileblocks'
+  ]);
+
   grunt.registerTask('heroku', function () {
     grunt.log.warn('The `heroku` task has been deprecated. Use `grunt build` to build for deployment.');
     grunt.task.run(['build']);
@@ -492,6 +530,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'newer:jshint',
+    'updateBlocks',
     'test',
     'build'
   ]);
