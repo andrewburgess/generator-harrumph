@@ -1,10 +1,26 @@
 {
-  "name": "generator-angular",
+  "name": "generator-harrumph",
   "version": "0.1.0",
-  "description": "Yeoman generator",
+  "description": "You can't fax glitter! (On a serious note, this is basically an Angular generator done my way, sort of based on the generator-angular-fullstack one)",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "andrewburgess/generator-angular",
+  "repository": "andrewburgess/generator-harrumph",
+  "homepage": "https://github.com/andrewburgess/generator-harrumph",
+  "bugs": "https://github.com/andrewburgess/generator-harrumph/issues",
+  "keywords": [
+    "yeoman-generator",
+    "angularjs",
+    "express",
+    "harrumph",
+    "glitter",
+    "stan",
+    "xander",
+    "crews"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andrewburgess/generator-harrumph.git"
+  },
   "author": {
     "name": "Andrew Burgess",
     "email": "andrew@deceptacle.com",
