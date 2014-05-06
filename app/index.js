@@ -53,7 +53,11 @@ var AngularGenerator = yeoman.generators.Base.extend({
       var stats = fs.lstatSync(currentPath);
 
       if (stats.isDirectory()) {
-        self.mkdir(currentPath.replace(path.join(__dirname, 'templates'), ''));
+        var dir = currentPath.replace(path.join(__dirname, 'templates'), '');
+        if (dir[0] === '/') {
+          dir = dir.substring(1);
+        }
+        self.mkdir(dir);
       } else {
         if (path.basename(currentPath) && path.basename(currentPath)[0] === '_') {
           self.template(currentPath, currentPath.replace(path.join(__dirname, 'templates'), '').substring(1).replace(path.basename(currentPath), path.basename(currentPath).substring(1)));

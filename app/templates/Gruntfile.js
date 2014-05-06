@@ -100,7 +100,7 @@ module.exports = function (grunt) {
         }
       },
       bower: {
-        files: ['bower.json', '<%= yeoman.app %>/bower_components/**/*.*'],
+        files: ['bower.json'],
         tasks: ['bowerInstall'],
         options: {
           event: ['added', 'deleted'],
