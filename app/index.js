@@ -22,10 +22,11 @@ var AngularGenerator = yeoman.generators.Base.extend({
     var done = this.async();
 
     // have Yeoman greet the user
-    this.log(this.yeoman);
+    this.log('\n');
+    this.log(fs.readFileSync(path.join(__dirname, 'stan.txt'), { encoding: 'utf-8' }));
 
     // replace it with a short and sweet description of your generator
-    this.log(chalk.magenta('You\'re using the fantastic Angular generator.'));
+    this.log(chalk.magenta('Harrumph! Harrumph harrumph harrumph!'));
 
     var prompts = [{
       name: 'projectName',

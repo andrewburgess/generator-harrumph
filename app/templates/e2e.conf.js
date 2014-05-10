@@ -10,8 +10,7 @@ if (process.platform === 'win32') {
 
 exports.config = {
     seleniumServerJar: 'tools/selenium-server-standalone-2.41.0.jar',
-    seleniumArgs: args,
-    chromeDriver: chromeDriver,
+    seleniumArgs: [],
     capabilities: {
         browserName: 'phantomjs',
         version: '',
