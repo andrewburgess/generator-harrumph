@@ -1,6 +1,6 @@
 {
   "name": "generator-harrumph",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "You can't fax glitter! (On a serious note, this is basically an Angular generator done my way, sort of based on the generator-angular-fullstack one)",
   "license": "MIT",
   "main": "app/index.js",
