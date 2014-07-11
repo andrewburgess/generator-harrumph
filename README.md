@@ -30,6 +30,10 @@ Not with that attitude!
 
 #### Not with any attitude!
 
+## So What Does It Do
+
+See here: http://ghost.deceptacle.com/2014/05/05/generator-harrumph/
+
 ## License
 
 MIT
